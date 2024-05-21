@@ -1,0 +1,23 @@
+﻿FUNCTION "Mapping" : Void
+{ S7_Optimized_Access := 'TRUE' }
+VERSION : 0.1
+   VAR_TEMP 
+      Fram : Int;
+      Bak : Int;
+   END_VAR
+
+
+BEGIN
+	"RH_OUT_2510TR_DB".Control.Fwd_request := "Forward";
+	"RH_OUT_2510TR_DB".Control.Rev_request := "Backward";
+	"RH_OUT_2510TR_DB"."Status.Ack" := "Acknowledge";
+	
+	"Status" := "RH_OUT_2510TR_DB".Drive.Status;
+	"Alarm" := "RH_OUT_2510TR_DB".Drive.Alarm;
+	"Alarm_number" := "RH_OUT_2510TR_DB".Drive.Alarm_number;
+	
+	//"Forward" := "Fram";
+	//"Backward" := "Bak";
+	// Här var det skillnad
+END_FUNCTION
+

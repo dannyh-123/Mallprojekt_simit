@@ -1,0 +1,620 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.OB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="Initial_Call" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Remanence" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">=True, if remanent data are available</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>Drives</Name>
+      <Namespace />
+      <Number>1</Number>
+      <ProgrammingLanguage>FBD</ProgrammingLanguage>
+      <SecondaryType>ProgramCycle</SecondaryType>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalConstant" UId="21">
+      <Constant Name="866TR2510-U1~PPO_Type_4_1" />
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="866TR2510-GL1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="866TR2510-GL2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="866TR2510-S1_Fwd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="866TR2510-S1_Rev" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
+      <CallInfo Name="RH_OUT_TR" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="27">
+          <Component Name="RH_OUT_2510TR_DB" />
+        </Instance>
+        <Parameter Name="Address" Section="Input" Type="HW_IO" />
+        <Parameter Name="GL1" Section="Input" Type="Bool" />
+        <Parameter Name="GL2" Section="Input" Type="Bool" />
+        <Parameter Name="Fwd" Section="Input" Type="Bool" />
+        <Parameter Name="Rev" Section="Input" Type="Bool" />
+        <Parameter Name="InterlockOk" Section="Input" Type="Bool" />
+        <Parameter Name="Speed_PV" Section="Output" Type="Int" />
+        <Parameter Name="Status" Section="Output" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <OpenCon UId="28" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Address" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="GL1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="GL2" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="26" Name="Fwd" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="26" Name="Rev" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="26" Name="Speed_PV" />
+      <OpenCon UId="29" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="26" Name="Status" />
+      <OpenCon UId="30" />
+    </Wire>
+    <Wire UId="40">
+      <OpenCon UId="31" />
+      <NameCon UId="26" Name="InterlockOk" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>2510!</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalConstant" UId="21">
+      <Constant Name="866TR2520-U1~PPO_Type_4_1" />
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="866TR2520-GL1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="866TR2520-GL2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="866TR2520-S1_Fwd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="866TR2520-S1_Rev" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
+      <CallInfo Name="RH_OUT_TR" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="27">
+          <Component Name="RH_OUT_2520TR_DB" />
+        </Instance>
+        <Parameter Name="Address" Section="Input" Type="HW_IO" />
+        <Parameter Name="GL1" Section="Input" Type="Bool" />
+        <Parameter Name="GL2" Section="Input" Type="Bool" />
+        <Parameter Name="Fwd" Section="Input" Type="Bool" />
+        <Parameter Name="Rev" Section="Input" Type="Bool" />
+        <Parameter Name="InterlockOk" Section="Input" Type="Bool" />
+        <Parameter Name="Speed_PV" Section="Output" Type="Int" />
+        <Parameter Name="Status" Section="Output" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <OpenCon UId="28" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Address" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="GL1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="GL2" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="26" Name="Fwd" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="26" Name="Rev" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="26" Name="Speed_PV" />
+      <OpenCon UId="29" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="26" Name="Status" />
+      <OpenCon UId="30" />
+    </Wire>
+    <Wire UId="40">
+      <OpenCon UId="31" />
+      <NameCon UId="26" Name="InterlockOk" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalConstant" UId="21">
+      <Constant Name="866TR2530-U1~PPO_Type_4_1" />
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="866TR2530-GL1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="866TR2530-GL2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="866TR2530-S1_Fwd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="866TR2530-S1_Rev" />
+      </Symbol>
+    </Access>
+    <Call UId="26">
+      <CallInfo Name="RH_OUT_TR" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="27">
+          <Component Name="RH_OUT_2530TR_DB" />
+        </Instance>
+        <Parameter Name="Address" Section="Input" Type="HW_IO" />
+        <Parameter Name="GL1" Section="Input" Type="Bool" />
+        <Parameter Name="GL2" Section="Input" Type="Bool" />
+        <Parameter Name="Fwd" Section="Input" Type="Bool" />
+        <Parameter Name="Rev" Section="Input" Type="Bool" />
+        <Parameter Name="InterlockOk" Section="Input" Type="Bool" />
+        <Parameter Name="Speed_PV" Section="Output" Type="Int" />
+        <Parameter Name="Status" Section="Output" Type="Int" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="32">
+      <OpenCon UId="28" />
+      <NameCon UId="26" Name="en" />
+    </Wire>
+    <Wire UId="33">
+      <IdentCon UId="21" />
+      <NameCon UId="26" Name="Address" />
+    </Wire>
+    <Wire UId="34">
+      <IdentCon UId="22" />
+      <NameCon UId="26" Name="GL1" />
+    </Wire>
+    <Wire UId="35">
+      <IdentCon UId="23" />
+      <NameCon UId="26" Name="GL2" />
+    </Wire>
+    <Wire UId="36">
+      <IdentCon UId="24" />
+      <NameCon UId="26" Name="Fwd" />
+    </Wire>
+    <Wire UId="37">
+      <IdentCon UId="25" />
+      <NameCon UId="26" Name="Rev" />
+    </Wire>
+    <Wire UId="38">
+      <NameCon UId="26" Name="Speed_PV" />
+      <OpenCon UId="29" />
+    </Wire>
+    <Wire UId="39">
+      <NameCon UId="26" Name="Status" />
+      <OpenCon UId="30" />
+    </Wire>
+    <Wire UId="40">
+      <OpenCon UId="31" />
+      <NameCon UId="26" Name="InterlockOk" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="LiteralConstant" UId="21">
+      <Constant>
+        <ConstantType>HW_IO</ConstantType>
+        <ConstantValue>412</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>HW_IO</ConstantType>
+        <ConstantValue>412</ConstantValue>
+      </Constant>
+    </Access>
+    <Call UId="23">
+      <CallInfo Name="ABB_DRIVE_CONTROL_FB" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="24">
+          <Component Name="ABB_DRIVE_CONTROL_FB_DB" />
+        </Instance>
+        <Parameter Name="PPO_TYPE" Section="Input" Type="Int" />
+        <Parameter Name="ADAPTER_TYPE" Section="Input" Type="Int" />
+        <Parameter Name="DRIVE_TYPE" Section="Input" Type="Int" />
+        <Parameter Name="DPV_MODE" Section="Input" Type="Bool" />
+        <Parameter Name="ADR_IN" Section="Input" Type="HW_IO" />
+        <Parameter Name="ADR_OUT" Section="Input" Type="HW_IO" />
+        <Parameter Name="SWITCH_ON" Section="Input" Type="Bool" />
+        <Parameter Name="START" Section="Input" Type="Bool" />
+        <Parameter Name="EMCY_STOP" Section="Input" Type="Bool" />
+        <Parameter Name="COAST_STOP" Section="Input" Type="Bool" />
+        <Parameter Name="EXT_CTRL" Section="Input" Type="Bool" />
+        <Parameter Name="SPEED_REF" Section="Input" Type="Int" />
+        <Parameter Name="DONE" Section="Output" Type="Bool" />
+        <Parameter Name="ERR" Section="Output" Type="Bool" />
+        <Parameter Name="ERNO" Section="Output" Type="Int" />
+        <Parameter Name="STOPPED" Section="Output" Type="Bool" />
+        <Parameter Name="RUNNING" Section="Output" Type="Bool" />
+        <Parameter Name="FAULT" Section="Output" Type="Bool" />
+        <Parameter Name="WARN" Section="Output" Type="Bool" />
+        <Parameter Name="EXT_RUN_ENABLE" Section="Output" Type="Bool" />
+        <Parameter Name="LOCAL_CTRL" Section="Output" Type="Bool" />
+        <Parameter Name="EXT_CTRL_LOC2" Section="Output" Type="Bool" />
+        <Parameter Name="ACT_SPEED" Section="Output" Type="Int" />
+        <Parameter Name="MSW" Section="Output" Type="Word" />
+        <Parameter Name="MCW" Section="Output" Type="Word" />
+        <Parameter Name="RESET" Section="InOut" Type="Bool" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="50">
+      <OpenCon UId="25" />
+      <NameCon UId="23" Name="en" />
+    </Wire>
+    <Wire UId="51">
+      <OpenCon UId="26" />
+      <NameCon UId="23" Name="PPO_TYPE" />
+    </Wire>
+    <Wire UId="52">
+      <OpenCon UId="27" />
+      <NameCon UId="23" Name="ADAPTER_TYPE" />
+    </Wire>
+    <Wire UId="53">
+      <OpenCon UId="28" />
+      <NameCon UId="23" Name="DRIVE_TYPE" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="29" />
+      <NameCon UId="23" Name="DPV_MODE" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="21" />
+      <NameCon UId="23" Name="ADR_IN" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="22" />
+      <NameCon UId="23" Name="ADR_OUT" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="30" />
+      <NameCon UId="23" Name="SWITCH_ON" />
+    </Wire>
+    <Wire UId="58">
+      <OpenCon UId="31" />
+      <NameCon UId="23" Name="START" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="32" />
+      <NameCon UId="23" Name="EMCY_STOP" />
+    </Wire>
+    <Wire UId="60">
+      <OpenCon UId="33" />
+      <NameCon UId="23" Name="COAST_STOP" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="34" />
+      <NameCon UId="23" Name="EXT_CTRL" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="35" />
+      <NameCon UId="23" Name="SPEED_REF" />
+    </Wire>
+    <Wire UId="63">
+      <OpenCon UId="36" />
+      <NameCon UId="23" Name="RESET" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="23" Name="DONE" />
+      <OpenCon UId="37" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="23" Name="ERR" />
+      <OpenCon UId="38" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="23" Name="ERNO" />
+      <OpenCon UId="39" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="23" Name="STOPPED" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="23" Name="RUNNING" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="23" Name="FAULT" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="23" Name="WARN" />
+      <OpenCon UId="43" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="23" Name="EXT_RUN_ENABLE" />
+      <OpenCon UId="44" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="23" Name="LOCAL_CTRL" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="23" Name="EXT_CTRL_LOC2" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="23" Name="ACT_SPEED" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="23" Name="MSW" />
+      <OpenCon UId="48" />
+    </Wire>
+    <Wire UId="76">
+      <NameCon UId="23" Name="MCW" />
+      <OpenCon UId="49" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="20" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="21" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>"Main Program Sweep (Cycle)"</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="22" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text>"Main Program Sweep (Cycle)"</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.OB>
+</Document>
