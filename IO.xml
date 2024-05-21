@@ -1,0 +1,1553 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.OB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="Initial_Call" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Remanence" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">=True, if remanent data are available</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Temp">
+    <Member Name="101CV1_Temp" Datatype="Real" />
+    <Member Name="101CV2_Temp" Datatype="Real" />
+  </Section>
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>IO</Name>
+      <Namespace />
+      <Number>123</Number>
+      <ProgrammingLanguage>FBD</ProgrammingLanguage>
+      <SecondaryType>ProgramCycle</SecondaryType>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="101LT1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="Temp6" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="24">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="25">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>5.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101LT1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="Interface" />
+        <Component Name="LT1_ScaledInput" />
+      </Symbol>
+    </Access>
+    <Call UId="28">
+      <CallInfo Name="fbIO_AnalogInput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="29">
+          <Component Name="101LT1_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="wInValue" Section="Input" Type="Word" />
+        <Parameter Name="iInSensorType" Section="Input" Type="Int" />
+        <Parameter Name="rInEngUnitsMin" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMax" Section="Input" Type="Real" />
+        <Parameter Name="rInLowLow" Section="Input" Type="Real" />
+        <Parameter Name="rInLow" Section="Input" Type="Real" />
+        <Parameter Name="rInHigh" Section="Input" Type="Real" />
+        <Parameter Name="rInHighHigh" Section="Input" Type="Real" />
+        <Parameter Name="rInLowLowDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInLowDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInHighDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInHighHighDeadband" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="rOutEngUnitsValue" Section="Output" Type="Real" />
+        <Parameter Name="bOutLowLow" Section="Output" Type="Bool" />
+        <Parameter Name="bOutLow" Section="Output" Type="Bool" />
+        <Parameter Name="bOutHigh" Section="Output" Type="Bool" />
+        <Parameter Name="bOutHighHigh" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_IO_AnalogInput" Section="Output" Type="&quot;udtError_AnalogInput&quot;" />
+        <Parameter Name="HMI_IO_AnalogInput" Section="InOut" Type="&quot;udtHMI_AnalogInput&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="47">
+      <OpenCon UId="30" />
+      <NameCon UId="28" Name="en" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="21" />
+      <NameCon UId="28" Name="iInMode" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="22" />
+      <NameCon UId="28" Name="wInValue" />
+    </Wire>
+    <Wire UId="50">
+      <IdentCon UId="23" />
+      <NameCon UId="28" Name="iInSensorType" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="24" />
+      <NameCon UId="28" Name="rInEngUnitsMin" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="25" />
+      <NameCon UId="28" Name="rInEngUnitsMax" />
+    </Wire>
+    <Wire UId="53">
+      <OpenCon UId="31" />
+      <NameCon UId="28" Name="rInLowLow" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="32" />
+      <NameCon UId="28" Name="rInLow" />
+    </Wire>
+    <Wire UId="55">
+      <OpenCon UId="33" />
+      <NameCon UId="28" Name="rInHigh" />
+    </Wire>
+    <Wire UId="56">
+      <OpenCon UId="34" />
+      <NameCon UId="28" Name="rInHighHigh" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="35" />
+      <NameCon UId="28" Name="rInLowLowDeadband" />
+    </Wire>
+    <Wire UId="58">
+      <OpenCon UId="36" />
+      <NameCon UId="28" Name="rInLowDeadband" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="37" />
+      <NameCon UId="28" Name="rInHighDeadband" />
+    </Wire>
+    <Wire UId="60">
+      <OpenCon UId="38" />
+      <NameCon UId="28" Name="rInHighHighDeadband" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="39" />
+      <NameCon UId="28" Name="bInResetError" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="26" />
+      <NameCon UId="28" Name="HMI_IO_AnalogInput" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="28" Name="rOutEngUnitsValue" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="28" Name="bOutLowLow" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="28" Name="bOutLow" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="28" Name="bOutHigh" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="28" Name="bOutHighHigh" />
+      <OpenCon UId="43" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="28" Name="bOutAuto" />
+      <OpenCon UId="44" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="28" Name="bOutError" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="28" Name="ERROR_IO_AnalogInput" />
+      <OpenCon UId="46" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="B" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101PT1_Sim" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>20.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101PT1" />
+      </Symbol>
+    </Access>
+    <Call UId="25">
+      <CallInfo Name="fbIO_AnalogInput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="26">
+          <Component Name="101PT1_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="wInValue" Section="Input" Type="Word" />
+        <Parameter Name="iInSensorType" Section="Input" Type="Int" />
+        <Parameter Name="rInEngUnitsMin" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMax" Section="Input" Type="Real" />
+        <Parameter Name="rInLowLow" Section="Input" Type="Real" />
+        <Parameter Name="rInLow" Section="Input" Type="Real" />
+        <Parameter Name="rInHigh" Section="Input" Type="Real" />
+        <Parameter Name="rInHighHigh" Section="Input" Type="Real" />
+        <Parameter Name="rInLowLowDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInLowDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInHighDeadband" Section="Input" Type="Real" />
+        <Parameter Name="rInHighHighDeadband" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="rOutEngUnitsValue" Section="Output" Type="Real" />
+        <Parameter Name="bOutLowLow" Section="Output" Type="Bool" />
+        <Parameter Name="bOutLow" Section="Output" Type="Bool" />
+        <Parameter Name="bOutHigh" Section="Output" Type="Bool" />
+        <Parameter Name="bOutHighHigh" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_IO_AnalogInput" Section="Output" Type="&quot;udtError_AnalogInput&quot;" />
+        <Parameter Name="HMI_IO_AnalogInput" Section="InOut" Type="&quot;udtHMI_AnalogInput&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="47">
+      <OpenCon UId="27" />
+      <NameCon UId="25" Name="en" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="21" />
+      <NameCon UId="25" Name="iInMode" />
+    </Wire>
+    <Wire UId="49">
+      <IdentCon UId="22" />
+      <NameCon UId="25" Name="wInValue" />
+    </Wire>
+    <Wire UId="50">
+      <OpenCon UId="28" />
+      <NameCon UId="25" Name="iInSensorType" />
+    </Wire>
+    <Wire UId="51">
+      <OpenCon UId="29" />
+      <NameCon UId="25" Name="rInEngUnitsMin" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="23" />
+      <NameCon UId="25" Name="rInEngUnitsMax" />
+    </Wire>
+    <Wire UId="53">
+      <OpenCon UId="30" />
+      <NameCon UId="25" Name="rInLowLow" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="31" />
+      <NameCon UId="25" Name="rInLow" />
+    </Wire>
+    <Wire UId="55">
+      <OpenCon UId="32" />
+      <NameCon UId="25" Name="rInHigh" />
+    </Wire>
+    <Wire UId="56">
+      <OpenCon UId="33" />
+      <NameCon UId="25" Name="rInHighHigh" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="34" />
+      <NameCon UId="25" Name="rInLowLowDeadband" />
+    </Wire>
+    <Wire UId="58">
+      <OpenCon UId="35" />
+      <NameCon UId="25" Name="rInLowDeadband" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="36" />
+      <NameCon UId="25" Name="rInHighDeadband" />
+    </Wire>
+    <Wire UId="60">
+      <OpenCon UId="37" />
+      <NameCon UId="25" Name="rInHighHighDeadband" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="38" />
+      <NameCon UId="25" Name="bInResetError" />
+    </Wire>
+    <Wire UId="62">
+      <IdentCon UId="24" />
+      <NameCon UId="25" Name="HMI_IO_AnalogInput" />
+    </Wire>
+    <Wire UId="63">
+      <NameCon UId="25" Name="rOutEngUnitsValue" />
+      <OpenCon UId="39" />
+    </Wire>
+    <Wire UId="64">
+      <NameCon UId="25" Name="bOutLowLow" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="65">
+      <NameCon UId="25" Name="bOutLow" />
+      <OpenCon UId="41" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="25" Name="bOutHigh" />
+      <OpenCon UId="42" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="25" Name="bOutHighHigh" />
+      <OpenCon UId="43" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="25" Name="bOutAuto" />
+      <OpenCon UId="44" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="25" Name="bOutError" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="25" Name="ERROR_IO_AnalogInput" />
+      <OpenCon UId="46" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="C" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="F" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="10" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="11" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="12" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="Interface" />
+        <Component Name="LT1_ScaledInput" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>95.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="101LC1" />
+        <Component Name="Output" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101CV1_Valve" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="101CV1_Temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="memSensorType1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="101CV1_Temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>0.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LiteralConstant" UId="32">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>100.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101CV1_Out" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="34">
+      <Symbol>
+        <Component Name="101CV1" />
+      </Symbol>
+    </Access>
+    <Part Name="Le" UId="35">
+      <TemplateValue Name="SrcType" Type="Type">Real</TemplateValue>
+    </Part>
+    <Call UId="36">
+      <CallInfo Name="fbValve_Analog" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="37">
+          <Component Name="101CV1_Valve_DB" />
+        </Instance>
+        <Parameter Name="tInTimeout" Section="Input" Type="Time" />
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="iInEstopFunction" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="rInSignalCommand" Section="Input" Type="Real" />
+        <Parameter Name="rInAutoCommand" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="bInSimulate" Section="Input" Type="Bool" />
+        <Parameter Name="wOutCommand" Section="Output" Type="Word" />
+        <Parameter Name="rOutCommand" Section="Output" Type="Real" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_AnalogValve" Section="Output" Type="&quot;udtError_AnalogValve&quot;" />
+        <Parameter Name="HMI_AnalogValveControl" Section="InOut" Type="&quot;udtHMI_AnalogValveControl&quot;" />
+      </CallInfo>
+    </Call>
+    <Call UId="38">
+      <CallInfo Name="fbIO_AnalogOutput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="39">
+          <Component Name="101CV1_Out_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="iInSensorType" Section="Input" Type="Int" />
+        <Parameter Name="iInEstopFunction" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="rInValue" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMin" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMax" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="wOutValue" Section="Output" Type="Word" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_IO_AnalogOutput" Section="Output" Type="&quot;udtError_AnalogOutput&quot;" />
+        <Parameter Name="HMI_IO_AnalogOutput" Section="InOut" Type="&quot;udtHMI_AnalogOutput&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="58">
+      <IdentCon UId="22" />
+      <NameCon UId="35" Name="in1" />
+    </Wire>
+    <Wire UId="59">
+      <IdentCon UId="23" />
+      <NameCon UId="35" Name="in2" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="35" Name="out" />
+      <NameCon UId="36" Name="bInEnable" />
+    </Wire>
+    <Wire UId="61">
+      <OpenCon UId="40" />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="41" />
+      <NameCon UId="36" Name="tInTimeout" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="21" />
+      <NameCon UId="36" Name="iInMode" />
+    </Wire>
+    <Wire UId="64">
+      <OpenCon UId="42" />
+      <NameCon UId="36" Name="iInEstopFunction" />
+    </Wire>
+    <Wire UId="65">
+      <OpenCon UId="43" />
+      <NameCon UId="36" Name="bInEstop" />
+    </Wire>
+    <Wire UId="66">
+      <OpenCon UId="44" />
+      <NameCon UId="36" Name="rInSignalCommand" />
+    </Wire>
+    <Wire UId="67">
+      <IdentCon UId="24" />
+      <NameCon UId="36" Name="rInAutoCommand" />
+    </Wire>
+    <Wire UId="68">
+      <OpenCon UId="45" />
+      <NameCon UId="36" Name="bInResetError" />
+    </Wire>
+    <Wire UId="69">
+      <OpenCon UId="46" />
+      <NameCon UId="36" Name="bInSimulate" />
+    </Wire>
+    <Wire UId="70">
+      <IdentCon UId="25" />
+      <NameCon UId="36" Name="HMI_AnalogValveControl" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="36" Name="wOutCommand" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="72">
+      <NameCon UId="36" Name="rOutCommand" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="73">
+      <NameCon UId="36" Name="bOutAuto" />
+      <OpenCon UId="48" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="36" Name="bOutError" />
+      <OpenCon UId="49" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="36" Name="ERROR_AnalogValve" />
+      <OpenCon UId="50" />
+    </Wire>
+    <Wire UId="76">
+      <OpenCon UId="51" />
+      <NameCon UId="38" Name="en" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="27" />
+      <NameCon UId="38" Name="iInMode" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="28" />
+      <NameCon UId="38" Name="iInSensorType" />
+    </Wire>
+    <Wire UId="79">
+      <OpenCon UId="52" />
+      <NameCon UId="38" Name="iInEstopFunction" />
+    </Wire>
+    <Wire UId="80">
+      <OpenCon UId="53" />
+      <NameCon UId="38" Name="bInEstop" />
+    </Wire>
+    <Wire UId="81">
+      <IdentCon UId="29" />
+      <NameCon UId="38" Name="bInEnable" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="30" />
+      <NameCon UId="38" Name="rInValue" />
+    </Wire>
+    <Wire UId="83">
+      <IdentCon UId="31" />
+      <NameCon UId="38" Name="rInEngUnitsMin" />
+    </Wire>
+    <Wire UId="84">
+      <IdentCon UId="32" />
+      <NameCon UId="38" Name="rInEngUnitsMax" />
+    </Wire>
+    <Wire UId="85">
+      <OpenCon UId="54" />
+      <NameCon UId="38" Name="bInResetError" />
+    </Wire>
+    <Wire UId="86">
+      <IdentCon UId="33" />
+      <NameCon UId="38" Name="HMI_IO_AnalogOutput" />
+    </Wire>
+    <Wire UId="87">
+      <NameCon UId="38" Name="wOutValue" />
+      <IdentCon UId="34" />
+    </Wire>
+    <Wire UId="88">
+      <NameCon UId="38" Name="bOutAuto" />
+      <OpenCon UId="55" />
+    </Wire>
+    <Wire UId="89">
+      <NameCon UId="38" Name="bOutError" />
+      <OpenCon UId="56" />
+    </Wire>
+    <Wire UId="90">
+      <NameCon UId="38" Name="ERROR_IO_AnalogOutput" />
+      <OpenCon UId="57" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="13" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="14" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="15" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="16" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="17" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>"101CV1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="18" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="19" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="T1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="Interface" />
+        <Component Name="CV2_ExpSp" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101CV2_Valve" />
+      </Symbol>
+    </Access>
+    <Access Scope="LocalVariable" UId="26">
+      <Symbol>
+        <Component Name="101CV2_Temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Int</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="memSensorType2" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="29">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="LocalVariable" UId="30">
+      <Symbol>
+        <Component Name="101CV2_Temp" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="31">
+      <Constant>
+        <ConstantType>Real</ConstantType>
+        <ConstantValue>100.0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="32">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101CV2_Out" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="33">
+      <Symbol>
+        <Component Name="101CV2" />
+      </Symbol>
+    </Access>
+    <Call UId="34">
+      <CallInfo Name="fbValve_Analog" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="35">
+          <Component Name="101CV2_DB" />
+        </Instance>
+        <Parameter Name="tInTimeout" Section="Input" Type="Time" />
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="iInEstopFunction" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="rInSignalCommand" Section="Input" Type="Real" />
+        <Parameter Name="rInAutoCommand" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="bInSimulate" Section="Input" Type="Bool" />
+        <Parameter Name="wOutCommand" Section="Output" Type="Word" />
+        <Parameter Name="rOutCommand" Section="Output" Type="Real" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_AnalogValve" Section="Output" Type="&quot;udtError_AnalogValve&quot;" />
+        <Parameter Name="HMI_AnalogValveControl" Section="InOut" Type="&quot;udtHMI_AnalogValveControl&quot;" />
+      </CallInfo>
+    </Call>
+    <Call UId="36">
+      <CallInfo Name="fbIO_AnalogOutput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="37">
+          <Component Name="101CV2_Out_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="iInSensorType" Section="Input" Type="Int" />
+        <Parameter Name="iInEstopFunction" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="rInValue" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMin" Section="Input" Type="Real" />
+        <Parameter Name="rInEngUnitsMax" Section="Input" Type="Real" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="wOutValue" Section="Output" Type="Word" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_IO_AnalogOutput" Section="Output" Type="&quot;udtError_AnalogOutput&quot;" />
+        <Parameter Name="HMI_IO_AnalogOutput" Section="InOut" Type="&quot;udtHMI_AnalogOutput&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="56">
+      <OpenCon UId="38" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="57">
+      <OpenCon UId="39" />
+      <NameCon UId="34" Name="tInTimeout" />
+    </Wire>
+    <Wire UId="58">
+      <IdentCon UId="21" />
+      <NameCon UId="34" Name="iInMode" />
+    </Wire>
+    <Wire UId="59">
+      <OpenCon UId="40" />
+      <NameCon UId="34" Name="iInEstopFunction" />
+    </Wire>
+    <Wire UId="60">
+      <IdentCon UId="22" />
+      <NameCon UId="34" Name="bInEstop" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="23" />
+      <NameCon UId="34" Name="bInEnable" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="41" />
+      <NameCon UId="34" Name="rInSignalCommand" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="24" />
+      <NameCon UId="34" Name="rInAutoCommand" />
+    </Wire>
+    <Wire UId="64">
+      <OpenCon UId="42" />
+      <NameCon UId="34" Name="bInResetError" />
+    </Wire>
+    <Wire UId="65">
+      <OpenCon UId="43" />
+      <NameCon UId="34" Name="bInSimulate" />
+    </Wire>
+    <Wire UId="66">
+      <IdentCon UId="25" />
+      <NameCon UId="34" Name="HMI_AnalogValveControl" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="34" Name="wOutCommand" />
+      <OpenCon UId="44" />
+    </Wire>
+    <Wire UId="68">
+      <NameCon UId="34" Name="rOutCommand" />
+      <IdentCon UId="26" />
+    </Wire>
+    <Wire UId="69">
+      <NameCon UId="34" Name="bOutAuto" />
+      <OpenCon UId="45" />
+    </Wire>
+    <Wire UId="70">
+      <NameCon UId="34" Name="bOutError" />
+      <OpenCon UId="46" />
+    </Wire>
+    <Wire UId="71">
+      <NameCon UId="34" Name="ERROR_AnalogValve" />
+      <OpenCon UId="47" />
+    </Wire>
+    <Wire UId="72">
+      <OpenCon UId="48" />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="27" />
+      <NameCon UId="36" Name="iInMode" />
+    </Wire>
+    <Wire UId="74">
+      <IdentCon UId="28" />
+      <NameCon UId="36" Name="iInSensorType" />
+    </Wire>
+    <Wire UId="75">
+      <OpenCon UId="49" />
+      <NameCon UId="36" Name="iInEstopFunction" />
+    </Wire>
+    <Wire UId="76">
+      <OpenCon UId="50" />
+      <NameCon UId="36" Name="bInEstop" />
+    </Wire>
+    <Wire UId="77">
+      <IdentCon UId="29" />
+      <NameCon UId="36" Name="bInEnable" />
+    </Wire>
+    <Wire UId="78">
+      <IdentCon UId="30" />
+      <NameCon UId="36" Name="rInValue" />
+    </Wire>
+    <Wire UId="79">
+      <OpenCon UId="51" />
+      <NameCon UId="36" Name="rInEngUnitsMin" />
+    </Wire>
+    <Wire UId="80">
+      <IdentCon UId="31" />
+      <NameCon UId="36" Name="rInEngUnitsMax" />
+    </Wire>
+    <Wire UId="81">
+      <OpenCon UId="52" />
+      <NameCon UId="36" Name="bInResetError" />
+    </Wire>
+    <Wire UId="82">
+      <IdentCon UId="32" />
+      <NameCon UId="36" Name="HMI_IO_AnalogOutput" />
+    </Wire>
+    <Wire UId="83">
+      <NameCon UId="36" Name="wOutValue" />
+      <IdentCon UId="33" />
+    </Wire>
+    <Wire UId="84">
+      <NameCon UId="36" Name="bOutAuto" />
+      <OpenCon UId="53" />
+    </Wire>
+    <Wire UId="85">
+      <NameCon UId="36" Name="bOutError" />
+      <OpenCon UId="54" />
+    </Wire>
+    <Wire UId="86">
+      <NameCon UId="36" Name="ERROR_IO_AnalogOutput" />
+      <OpenCon UId="55" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="1A" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="1B" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="1D" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="1E" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>101CV2</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="1F" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="20" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="Timeout" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="23">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>0</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="101DV1_GL2" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="101DV1_GL1" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="26">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="LC1_InAuto" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101DV1_Valve" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="Temp1" />
+      </Symbol>
+    </Access>
+    <Call UId="30">
+      <CallInfo Name="fbValve_Solenoid" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="31">
+          <Component Name="101DV1_Valve" />
+        </Instance>
+        <Parameter Name="tInTimeout" Section="Input" Type="Time" />
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInSignalHome" Section="Input" Type="Bool" />
+        <Parameter Name="bInSignalWork" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="bInCommandWork" Section="Input" Type="Bool" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="bInSimulate" Section="Input" Type="Bool" />
+        <Parameter Name="bOutCommandHome" Section="Output" Type="Bool" />
+        <Parameter Name="bOutCommandWork" Section="Output" Type="Bool" />
+        <Parameter Name="bOutActiveHome" Section="Output" Type="Bool" />
+        <Parameter Name="bOutActiveWork" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="ERROR_Valve" Section="Output" Type="&quot;udtError_Valve&quot;" />
+        <Parameter Name="HMI_ValveControl" Section="InOut" Type="&quot;udtHMI_ValveControl&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="41">
+      <OpenCon UId="32" />
+      <NameCon UId="30" Name="en" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="21" />
+      <NameCon UId="30" Name="tInTimeout" />
+    </Wire>
+    <Wire UId="43">
+      <IdentCon UId="22" />
+      <NameCon UId="30" Name="iInMode" />
+    </Wire>
+    <Wire UId="44">
+      <IdentCon UId="23" />
+      <NameCon UId="30" Name="bInEstop" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="24" />
+      <NameCon UId="30" Name="bInSignalHome" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="25" />
+      <NameCon UId="30" Name="bInSignalWork" />
+    </Wire>
+    <Wire UId="47">
+      <IdentCon UId="26" />
+      <NameCon UId="30" Name="bInEnable" />
+    </Wire>
+    <Wire UId="48">
+      <IdentCon UId="27" />
+      <NameCon UId="30" Name="bInCommandWork" />
+    </Wire>
+    <Wire UId="49">
+      <OpenCon UId="33" />
+      <NameCon UId="30" Name="bInResetError" />
+    </Wire>
+    <Wire UId="50">
+      <OpenCon UId="34" />
+      <NameCon UId="30" Name="bInSimulate" />
+    </Wire>
+    <Wire UId="51">
+      <IdentCon UId="28" />
+      <NameCon UId="30" Name="HMI_ValveControl" />
+    </Wire>
+    <Wire UId="52">
+      <NameCon UId="30" Name="bOutCommandHome" />
+      <OpenCon UId="35" />
+    </Wire>
+    <Wire UId="53">
+      <NameCon UId="30" Name="bOutCommandWork" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="54">
+      <NameCon UId="30" Name="bOutActiveHome" />
+      <OpenCon UId="36" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="30" Name="bOutActiveWork" />
+      <OpenCon UId="37" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="30" Name="bOutAuto" />
+      <OpenCon UId="38" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="30" Name="bOutError" />
+      <OpenCon UId="39" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="30" Name="ERROR_Valve" />
+      <OpenCon UId="40" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="21" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="22" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="23" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="24" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="25" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text>101DV1</Text>
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="26" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="27" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeAuto" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="22">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="Temp1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101DV2_Dout" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="101DV1_OPEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeAuto" />
+      </Symbol>
+    </Access>
+    <Access Scope="LiteralConstant" UId="27">
+      <Constant>
+        <ConstantType>Bool</ConstantType>
+        <ConstantValue>1</ConstantValue>
+      </Constant>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101DV2_Dout" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="29">
+      <Symbol>
+        <Component Name="101DV2_OPEN" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="30">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="31">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101DV1_Open_Din" />
+      </Symbol>
+    </Access>
+    <Call UId="32">
+      <CallInfo Name="fbIO_DigitalOutput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="33">
+          <Component Name="101DV1_Open_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="bInCommand" Section="Input" Type="Bool" />
+        <Parameter Name="bOutCommand" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="HMI_IO_DigitalOutput" Section="InOut" Type="&quot;udtHMI_DigitalOutput&quot;" />
+      </CallInfo>
+    </Call>
+    <Call UId="34">
+      <CallInfo Name="fbIO_DigitalOutput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="35">
+          <Component Name="101DV2_Open_DB" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="bInEnable" Section="Input" Type="Bool" />
+        <Parameter Name="bInCommand" Section="Input" Type="Bool" />
+        <Parameter Name="bOutCommand" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="HMI_IO_DigitalOutput" Section="InOut" Type="&quot;udtHMI_DigitalOutput&quot;" />
+      </CallInfo>
+    </Call>
+    <Call UId="36">
+      <CallInfo Name="fbIO_DigitalInput" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="37">
+          <Component Name="101DV1_Din" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="bInInput" Section="Input" Type="Bool" />
+        <Parameter Name="tInOnDebounce" Section="Input" Type="Time" />
+        <Parameter Name="tInOffDebounce" Section="Input" Type="Time" />
+        <Parameter Name="bOutOn" Section="Output" Type="Bool" />
+        <Parameter Name="bOutRisingEdge" Section="Output" Type="Bool" />
+        <Parameter Name="bOutFallingEdge" Section="Output" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="HMI_IO_DigitalInput" Section="InOut" Type="&quot;udtHMI_DigitalInput&quot;" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="52">
+      <OpenCon UId="38" />
+      <NameCon UId="32" Name="en" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="21" />
+      <NameCon UId="32" Name="iInMode" />
+    </Wire>
+    <Wire UId="54">
+      <OpenCon UId="39" />
+      <NameCon UId="32" Name="bInEstop" />
+    </Wire>
+    <Wire UId="55">
+      <IdentCon UId="22" />
+      <NameCon UId="32" Name="bInEnable" />
+    </Wire>
+    <Wire UId="56">
+      <IdentCon UId="23" />
+      <NameCon UId="32" Name="bInCommand" />
+    </Wire>
+    <Wire UId="57">
+      <IdentCon UId="24" />
+      <NameCon UId="32" Name="HMI_IO_DigitalOutput" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="32" Name="bOutCommand" />
+      <IdentCon UId="25" />
+    </Wire>
+    <Wire UId="59">
+      <NameCon UId="32" Name="bOutAuto" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="60">
+      <NameCon UId="32" Name="eno" />
+      <NameCon UId="34" Name="en" />
+    </Wire>
+    <Wire UId="61">
+      <IdentCon UId="26" />
+      <NameCon UId="34" Name="iInMode" />
+    </Wire>
+    <Wire UId="62">
+      <OpenCon UId="41" />
+      <NameCon UId="34" Name="bInEstop" />
+    </Wire>
+    <Wire UId="63">
+      <IdentCon UId="27" />
+      <NameCon UId="34" Name="bInEnable" />
+    </Wire>
+    <Wire UId="64">
+      <OpenCon UId="42" />
+      <NameCon UId="34" Name="bInCommand" />
+    </Wire>
+    <Wire UId="65">
+      <IdentCon UId="28" />
+      <NameCon UId="34" Name="HMI_IO_DigitalOutput" />
+    </Wire>
+    <Wire UId="66">
+      <NameCon UId="34" Name="bOutCommand" />
+      <IdentCon UId="29" />
+    </Wire>
+    <Wire UId="67">
+      <NameCon UId="34" Name="bOutAuto" />
+      <OpenCon UId="43" />
+    </Wire>
+    <Wire UId="68">
+      <OpenCon UId="44" />
+      <NameCon UId="36" Name="en" />
+    </Wire>
+    <Wire UId="69">
+      <IdentCon UId="30" />
+      <NameCon UId="36" Name="iInMode" />
+    </Wire>
+    <Wire UId="70">
+      <OpenCon UId="45" />
+      <NameCon UId="36" Name="bInInput" />
+    </Wire>
+    <Wire UId="71">
+      <OpenCon UId="46" />
+      <NameCon UId="36" Name="tInOnDebounce" />
+    </Wire>
+    <Wire UId="72">
+      <OpenCon UId="47" />
+      <NameCon UId="36" Name="tInOffDebounce" />
+    </Wire>
+    <Wire UId="73">
+      <IdentCon UId="31" />
+      <NameCon UId="36" Name="HMI_IO_DigitalInput" />
+    </Wire>
+    <Wire UId="74">
+      <NameCon UId="36" Name="bOutOn" />
+      <OpenCon UId="48" />
+    </Wire>
+    <Wire UId="75">
+      <NameCon UId="36" Name="bOutRisingEdge" />
+      <OpenCon UId="49" />
+    </Wire>
+    <Wire UId="76">
+      <NameCon UId="36" Name="bOutFallingEdge" />
+      <OpenCon UId="50" />
+    </Wire>
+    <Wire UId="77">
+      <NameCon UId="36" Name="bOutAuto" />
+      <OpenCon UId="51" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="28" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="29" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="2B" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="2C" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="2D" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <SW.Blocks.CompileUnit ID="2E" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource />
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="2F" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="30" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="31" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="32" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="33" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="34" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="35" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="36" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text>"Main Program Sweep (Cycle)"</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="37" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text>"Main Program Sweep (Cycle)"</Text>
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.OB>
+</Document>

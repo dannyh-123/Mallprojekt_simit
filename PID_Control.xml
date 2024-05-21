@@ -1,0 +1,252 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Document>
+  <Engineering version="V19" />
+  <SW.Blocks.OB ID="0">
+    <AttributeList>
+      <Interface><Sections xmlns="http://www.siemens.com/automation/Openness/SW/Interface/v5">
+  <Section Name="Input">
+    <Member Name="Initial_Call" Datatype="Bool" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Initial call of this OB</MultiLanguageText>
+      </Comment>
+    </Member>
+    <Member Name="Event_Count" Datatype="Int" Informative="true">
+      <Comment>
+        <MultiLanguageText Lang="en-US">Events discarded</MultiLanguageText>
+      </Comment>
+    </Member>
+  </Section>
+  <Section Name="Temp" />
+  <Section Name="Constant" />
+</Sections></Interface>
+      <MemoryLayout>Optimized</MemoryLayout>
+      <Name>PID_Control</Name>
+      <Namespace />
+      <Number>30</Number>
+      <ProgrammingLanguage>FBD</ProgrammingLanguage>
+      <SecondaryType>CyclicInterrupt</SecondaryType>
+      <SetENOAutomatically>false</SetENOAutomatically>
+    </AttributeList>
+    <ObjectList>
+      <MultilingualText ID="1" CompositionName="Comment">
+        <ObjectList>
+          <MultilingualTextItem ID="2" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="3" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+      <SW.Blocks.CompileUnit ID="4" CompositionName="CompileUnits">
+        <AttributeList>
+          <NetworkSource><FlgNet xmlns="http://www.siemens.com/automation/Openness/SW/NetworkSource/FlgNet/v5">
+  <Parts>
+    <Access Scope="GlobalVariable" UId="21">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="ModeInd" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="22">
+      <Symbol>
+        <Component Name="Interface" />
+        <Component Name="LC1_ExtSp" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="23">
+      <Symbol>
+        <Component Name="Interface" />
+        <Component Name="LT1_ScaledInput" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="24">
+      <Symbol>
+        <Component Name="T5" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="25">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101LC1_PID" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="26">
+      <Symbol>
+        <Component Name="101LC1" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="27">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="LC1_InAuto" />
+      </Symbol>
+    </Access>
+    <Access Scope="GlobalVariable" UId="28">
+      <Symbol>
+        <Component Name="HMI_Interface" />
+        <Component Name="101LC1_PID_Error" />
+      </Symbol>
+    </Access>
+    <Call UId="29">
+      <CallInfo Name="fbPID_Compact" BlockType="FB">
+        <Instance Scope="GlobalVariable" UId="30">
+          <Component Name="fbPID_Compact_LC1" />
+        </Instance>
+        <Parameter Name="iInMode" Section="Input" Type="Int" />
+        <Parameter Name="bInEstop" Section="Input" Type="Bool" />
+        <Parameter Name="iInEstopFunction" Section="Input" Type="Int" />
+        <Parameter Name="rInSetPoint" Section="Input" Type="Real" />
+        <Parameter Name="rInInput" Section="Input" Type="Real" />
+        <Parameter Name="wInInputPER" Section="Input" Type="Word" />
+        <Parameter Name="rInManualValue" Section="Input" Type="Real" />
+        <Parameter Name="bInManualEnable" Section="Input" Type="Bool" />
+        <Parameter Name="iInPIDModeRequest" Section="Input" Type="Int" />
+        <Parameter Name="bInPIDModeActivate" Section="Input" Type="Bool" />
+        <Parameter Name="bInResetError" Section="Input" Type="Bool" />
+        <Parameter Name="bOutAuto" Section="Output" Type="Bool" />
+        <Parameter Name="bOutError" Section="Output" Type="Bool" />
+        <Parameter Name="diOutErrorCode" Section="Output" Type="DInt" />
+        <Parameter Name="ERROR_PID" Section="Output" Type="&quot;udtError_PID_Compact&quot;" />
+        <Parameter Name="HMI_PID" Section="InOut" Type="&quot;udtHMI_PID_Compact&quot;" />
+        <Parameter Name="dbPID_Compact" Section="InOut" Type="PID_Compact" />
+      </CallInfo>
+    </Call>
+  </Parts>
+  <Wires>
+    <Wire UId="41">
+      <OpenCon UId="31" />
+      <NameCon UId="29" Name="en" />
+    </Wire>
+    <Wire UId="42">
+      <IdentCon UId="21" />
+      <NameCon UId="29" Name="iInMode" />
+    </Wire>
+    <Wire UId="43">
+      <OpenCon UId="32" />
+      <NameCon UId="29" Name="bInEstop" />
+    </Wire>
+    <Wire UId="44">
+      <OpenCon UId="33" />
+      <NameCon UId="29" Name="iInEstopFunction" />
+    </Wire>
+    <Wire UId="45">
+      <IdentCon UId="22" />
+      <NameCon UId="29" Name="rInSetPoint" />
+    </Wire>
+    <Wire UId="46">
+      <IdentCon UId="23" />
+      <NameCon UId="29" Name="rInInput" />
+    </Wire>
+    <Wire UId="47">
+      <OpenCon UId="34" />
+      <NameCon UId="29" Name="wInInputPER" />
+    </Wire>
+    <Wire UId="48">
+      <OpenCon UId="35" />
+      <NameCon UId="29" Name="rInManualValue" />
+    </Wire>
+    <Wire UId="49">
+      <OpenCon UId="36" />
+      <NameCon UId="29" Name="bInManualEnable" />
+    </Wire>
+    <Wire UId="50">
+      <OpenCon UId="37" />
+      <NameCon UId="29" Name="iInPIDModeRequest" />
+    </Wire>
+    <Wire UId="51">
+      <OpenCon UId="38" />
+      <NameCon UId="29" Name="bInPIDModeActivate" />
+    </Wire>
+    <Wire UId="52">
+      <IdentCon UId="24" />
+      <NameCon UId="29" Name="bInResetError" />
+    </Wire>
+    <Wire UId="53">
+      <IdentCon UId="25" />
+      <NameCon UId="29" Name="HMI_PID" />
+    </Wire>
+    <Wire UId="54">
+      <IdentCon UId="26" />
+      <NameCon UId="29" Name="dbPID_Compact" />
+    </Wire>
+    <Wire UId="55">
+      <NameCon UId="29" Name="bOutAuto" />
+      <IdentCon UId="27" />
+    </Wire>
+    <Wire UId="56">
+      <NameCon UId="29" Name="bOutError" />
+      <OpenCon UId="39" />
+    </Wire>
+    <Wire UId="57">
+      <NameCon UId="29" Name="diOutErrorCode" />
+      <OpenCon UId="40" />
+    </Wire>
+    <Wire UId="58">
+      <NameCon UId="29" Name="ERROR_PID" />
+      <IdentCon UId="28" />
+    </Wire>
+  </Wires>
+</FlgNet></NetworkSource>
+          <ProgrammingLanguage>FBD</ProgrammingLanguage>
+        </AttributeList>
+        <ObjectList>
+          <MultilingualText ID="5" CompositionName="Comment">
+            <ObjectList>
+              <MultilingualTextItem ID="6" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="7" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+          <MultilingualText ID="8" CompositionName="Title">
+            <ObjectList>
+              <MultilingualTextItem ID="9" CompositionName="Items">
+                <AttributeList>
+                  <Culture>en-US</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+              <MultilingualTextItem ID="A" CompositionName="Items">
+                <AttributeList>
+                  <Culture>fi-FI</Culture>
+                  <Text />
+                </AttributeList>
+              </MultilingualTextItem>
+            </ObjectList>
+          </MultilingualText>
+        </ObjectList>
+      </SW.Blocks.CompileUnit>
+      <MultilingualText ID="B" CompositionName="Title">
+        <ObjectList>
+          <MultilingualTextItem ID="C" CompositionName="Items">
+            <AttributeList>
+              <Culture>en-US</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+          <MultilingualTextItem ID="D" CompositionName="Items">
+            <AttributeList>
+              <Culture>fi-FI</Culture>
+              <Text />
+            </AttributeList>
+          </MultilingualTextItem>
+        </ObjectList>
+      </MultilingualText>
+    </ObjectList>
+  </SW.Blocks.OB>
+</Document>
